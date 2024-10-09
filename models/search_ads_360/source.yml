@@ -1,0 +1,13 @@
+version: 2
+sources:
+  - name: sa360
+    schema: "{{ var('google_search_ads_360_schema', target.dataset) }}"
+    tables:
+      - name: campaign_performance_v2
+        identifier: "{{ var('campaign_performance_identifier', 'sa_360_campaign_performance_v_2')}}"
+      - name: adgroup_performance_v2
+        identifier: "{{ var('adgroup_performance_identifier', 'sa_360_adgroup_performance_v_2')}}"
+      - name: keyword_performance_v2
+        identifier: "{{ var('keyword_performance_identifier', 'sa_360_keyword_performance_v_2')}}"
+      - name: ad_performance_basic_v2
+        identifier: "{{ var('ad_performance_basic_identifier', 'sa_360_ad_performance_basic_v_2)}}"

@@ -1,0 +1,55 @@
+
+{{ config(enabled=var('keyword_performance_v2_enabled', True))}}
+{{
+  config(
+    alias= 'sa360-keyword_performance-v2'
+  )
+}}
+
+SELECT
+campaign_id as Campaign_Id ,
+NULL as Customer_Sub_manager_descriptive_name,
+segments_date as day,
+segments_device as Device,
+metrics_clicks as Clicks ,
+ad_group_criterion_keyword_match_type as Ad_Group_Criterion_Keyword_Match_Type ,
+bidding_strategy_target_cpa_cpc_bid_ceiling_micros as Bidding_Strategy_Target_Cpa_Cpc_Bid_Ceiling_Micros ,
+bidding_strategy_target_roas_cpc_bid_ceiling_micros as Bidding_Strategy_Target_Roas_Cpc_Bid_Ceiling_Micros ,
+bidding_strategy_target_impression_share_cpc_bid_ceiling_micros as Bidding_Strategy_Target_Impression_Share_Cpc_Bid_Ceiling_Micros ,
+bidding_strategy_target_outrank_share_cpc_bid_ceiling_micros as Bidding_Strategy_Target_Outrank_Share_Cpc_Bid_Ceiling_Micros ,
+bidding_strategy_target_spend_cpc_bid_ceiling_micros as Bidding_Strategy_Target_Spend_Cpc_Bid_Ceiling_Micros ,
+customer_account_type as Customer_Account_Type ,
+metrics_all_conversions as All_Conversions ,
+metrics_all_conversions_value as All_Conversions_Value ,
+metrics_client_account_conversions as Client_Account_Conversions ,
+campaign_status as Campaign_Status ,
+customer_engine_id as Customer_Engine_Id ,
+ad_group_criterion_final_urls as Ad_Group_Criterion_Final_Urls ,
+metrics_client_account_view_through_conversions as Client_Account_View_Through_Conversions ,
+ad_group_criterion_status as Ad_Group_Criterion_Status ,
+ad_group_criterion_engine_status as Ad_Group_Criterion_Engine_Status ,
+ad_group_name as Ad_Group_Name ,
+metrics_cross_device_conversions as Cross_Device_Conversions ,
+ad_group_status as Ad_Group_Status ,
+metrics_cost_micros as Cost_Micros ,
+campaign_name as Campaign_Name ,
+bidding_strategy_target_cpa_cpc_bid_floor_micros as Bidding_Strategy_Target_Cpa_Cpc_Bid_Floor_Micros ,
+bidding_strategy_target_roas_cpc_bid_floor_micros as Bidding_Strategy_Target_Roas_Cpc_Bid_Floor_Micros ,
+ad_group_id as Ad_Group_Id ,
+ad_group_criterion_keyword_text as Ad_Group_Criterion_Keyword_Text ,
+metrics_client_account_conversions_value as Client_Account_Conversions_Value ,
+customer_id as  Customer_Id  ,
+metrics_cross_device_conversions_value as Cross_Device_Conversions_Value ,
+ad_group_criterion_engine_id as	 Ad_Group_Criterion_Engine_Id	 ,
+ad_group_criterion_cpc_bid_micros as Ad_Group_Criterion_Cpc_Bid_Micros ,
+customer_descriptive_name as  Customer_Descriptive_Name  ,
+ad_group_criterion_criterion_id as Ad_Group_Criterion_Criterion_Id ,
+metrics_impressions as Impressions ,
+ad_group_criterion_final_url_suffix as Ad_Group_Criterion_Final_Url_Suffix ,
+campaign_advertising_channel_type as Campaign_Advertising_Channel_Type ,
+campaign_advertising_channel_sub_type as Campaign_Advertising_Channel_Sub_Type ,
+customer_manager as Customer_Manager ,
+customer_currency_code as Customer_Currency_Code,
+
+FROM {{ source('sa360', 'keyword_performance_v2')}}
+
