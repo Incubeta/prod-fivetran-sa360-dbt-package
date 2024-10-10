@@ -10,4 +10,4 @@ sources:
       - name: keyword_performance_v2
         identifier: "{{ var('keyword_performance_identifier', 'sa_360_keyword_performance_v_2')}}"
       - name: ad_performance_basic_v2
-        identifier: "{{ var('ad_performance_basic_identifier', 'sa_360_ad_performance_basic_v_2)}}"
+        identifier: "{{ var('ad_performance_basic_identifier', 'sa_360_ad_performance_basic_v_2')}}"
