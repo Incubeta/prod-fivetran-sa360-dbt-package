@@ -3,7 +3,12 @@
 {{ config(enabled=var('sa360_ad_performance_basic_v2_enabled', True))}}
 {{
   config(
-    alias= var('sa360_ad_performance_basic_v2_alias','sa360-ad_performance_basic-v2')
+    alias= var('sa360_ad_performance_basic_v2_alias','sa360-ad_performance_basic-v2'),
+    partition_by={
+      "field": "date",
+      "data_type": "date",
+      "granularity": "day"
+    }
   )
 }}
 
@@ -11,7 +16,7 @@
 
 
 SELECT 
-    segments_day as day,
+    segments_day as date,
 customer_descriptive_name as  Customer_Descriptive_Name  ,
 customer_id as  Customer_Id  ,
 customer_account_type as  Customer_Account_Type  ,

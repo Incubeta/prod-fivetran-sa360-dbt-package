@@ -2,12 +2,17 @@
 {{ config(enabled=var('sa360_campaign_performance_v2_enabled', True))}}
 {{
   config(
-    alias= var('sa360_campaign_performance_v2_alias','sa360-campaign_performance-v2')
+    alias= var('sa360_campaign_performance_v2_alias','sa360-campaign_performance-v2'),
+    partition_by={
+      "field": "date",
+      "data_type": "date",
+      "granularity": "day"
+    }
   )
 }}
 
 SELECT
-SAFE_CAST(segments_date as STRING) as date,
+segments_date as date,
 SAFE_CAST(customer_engine_id as STRING) as Customer_Engine_Id, 
 SAFE_CAST(customer_descriptive_name as STRING) as Customer_Descriptive_Name,
 SAFE_CAST(customer_id as STRING) as Customer_Id,

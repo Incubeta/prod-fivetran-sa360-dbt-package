@@ -2,14 +2,19 @@
 {{ config(enabled=var('keyword_performance_v2_enabled', True))}}
 {{
   config(
-    alias=var('keyword_performance_v2_alias','sa360-keyword_performance-v2')
+    alias=var('keyword_performance_v2_alias','sa360-keyword_performance-v2'),
+    partition_by={
+      "field": "date",
+      "data_type": "date",
+      "granularity": "day"
+    }
   )
 }}
 
 SELECT
 SAFE_CAST(campaign_id as STRING) as Campaign_Id ,
 SAFE_CAST(NULL as STRING) as Customer_Sub_manager_descriptive_name,
-SAFE_CAST(segments_date as STRING) as date,
+segments_date as date,
 SAFE_CAST(segments_device as STRING) as Device,
 SAFE_CAST(metrics_clicks as STRING) as Clicks ,
 SAFE_CAST(ad_group_criterion_keyword_match_type as STRING) as Ad_Group_Criterion_Keyword_Match_Type ,

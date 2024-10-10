@@ -2,7 +2,12 @@
 
 {{
   config(
-    alias=var('sa360_adgroup_performance_alias','sa360-adgroup_performance-v2')
+    alias=var('sa360_adgroup_performance_alias','sa360-adgroup_performance-v2'),
+    partition_by={
+      "field": "date",
+      "data_type": "date",
+      "granularity": "day"
+    }
   )
 }}
 
