@@ -2,7 +2,7 @@
 {{ config(enabled=var('keyword_performance_v2_enabled', True))}}
 {{
   config(
-    alias= 'sa360-keyword_performance-v2'
+    alias=var('keyword_performance_v2_alias','sa360-keyword_performance-v2')
   )
 }}
 

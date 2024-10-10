@@ -1,9 +1,9 @@
 
 
-{{ config(enabled=var('ad_performance_basic_v2_enabled', True))}}
+{{ config(enabled=var('sa360_ad_performance_basic_v2_enabled', True))}}
 {{
   config(
-    alias= 'sa360-ad_performance_basic-v2'
+    alias= var('sa360_ad_performance_basic_v2_alias','sa360-ad_performance_basic-v2')
   )
 }}
 

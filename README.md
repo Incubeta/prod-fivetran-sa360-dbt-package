@@ -48,6 +48,17 @@ vars:
     sa360_ad_performance_basic_enabled: false # default true
 ```
 
+#### Change output tables:
+The following vars can be used to change the output table names:
+
+|key|default|
+|---|-------|
+|sa360_campaign_performance_v2_alias|sa360-campaign_performance-v2|
+|sa360_adgroup_performance_v2_alias|sa360-adgroup_performance-v2|
+|sa360_keyword_performance_v2_alias|sa360-keyword_performance-v2|
+|sa360_ad_performance_basic_v2_alias|sa360-ad_performance_basic-v2|
+
+
 
 ### Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)

@@ -2,7 +2,7 @@
 {{ config(enabled=var('sa360_campaign_performance_v2_enabled', True))}}
 {{
   config(
-    alias= 'sa360-campaign_performance-v2'
+    alias= var('sa360_campaign_performance_v2_alias','sa360-campaign_performance-v2')
   )
 }}
 
