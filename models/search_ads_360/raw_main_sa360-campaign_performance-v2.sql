@@ -49,7 +49,7 @@ SAFE_CAST(metrics_clicks as STRING) as Clicks ,
 SAFE_CAST(metrics_cost_micros as STRING) as Cost_Micros ,
 SAFE_CAST(metrics_impressions as STRING) as Impressions ,
 SAFE_CAST(metrics_search_impression_share as STRING) as Search_Impression_Share ,
-SAFE_CAST(customer_currency_code as STRING) as Customer_CurrencyCode,
+SAFE_CAST(customer_currency_code as STRING) as Customer_Currency_Code,
 
 /* *****Please Do not remove the backticks from the query as it is essential for compiling queries with hyphen in DBT**** */
 
