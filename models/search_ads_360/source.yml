@@ -11,3 +11,15 @@ sources:
         identifier: "{{ var('sa360_keyword_performance_identifier', 'sa_360_keyword_performance_v_2')}}"
       - name: ad_performance_basic_v2
         identifier: "{{ var('sa360_ad_performance_basic_identifier', 'sa_360_ad_performance_basic_v_2')}}"
+      - name: campaign_performance_v1
+        identifier: "{{ var('sa360_campaign_performance_v1_identifier', 'sa360_campaign_performance_v1')}}"
+        config:
+          event_time: segments_date
+      - name: keyword_performance_v1
+        identifier: "{{ var('sa360_keyword_performance_v1_identifier', 'sa360_keyword_performance_v1')}}"
+        config:
+          event_time: segments_date
+      - name: adgroup_performance_v1
+        identifier: "{{ var('sa360_adgroup_performance_v1_identifier', 'sa360_adgroup_performance_v1')}}"
+        config:
+          event_time: segments_date

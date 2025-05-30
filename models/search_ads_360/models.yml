@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: sa_360_campaign_performance_v_1
+    config:
+      materialized: incremental
+      incremental_strategy: microbatch
+      full_refresh: false
+      event_time: day
+      batch_size: day
+      begin: 2025-01-01
+      lookback: "{{var('days_ago', 1)}}"
+      omit_default_schema: true
+      partition_by: 
+        field: day
+        data_type: date
+        granularity: day
+      schema: PUB_base
+      alias: 5t-sa360-campaign_performance-v1
+  - name: sa_360_keyword_performance_v_1
+    config:
+      materialized: incremental
+      incremental_strategy: microbatch
+      full_refresh: false
+      event_time: day
+      batch_size: day
+      begin: 2025-01-01
+      lookback: "{{var('days_ago', 1)}}"
+      omit_default_schema: true
+      partition_by: 
+        field: day
+        data_type: date
+        granularity: day
+      schema: PUB_base
+      alias: 5t-sa360-keyword_performance-v1
+  - name: sa_360_adgroup_performance_v_1
+    config:
+      materialized: incremental
+      incremental_strategy: microbatch
+      full_refresh: false
+      event_time: day
+      batch_size: day
+      begin: 2025-01-01
+      lookback: "{{var('days_ago', 1)}}"
+      omit_default_schema: true
+      partition_by: 
+        field: day
+        data_type: date
+        granularity: day
+      schema: PUB_base
+      alias: 5t-sa360-adgroup_performance-v1
