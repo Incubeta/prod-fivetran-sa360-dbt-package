@@ -54,8 +54,7 @@ SAFE_CAST( metrics_cross_device_conversions AS FLOAT64) cross_device_conversions
 SAFE_CAST(TRIM(customer_currency_code) AS STRING ) statistics_currency_code,
    'sa360-adgroup_performance-v1' AS raw_origin,
 ((SAFE_DIVIDE(SAFE_CAST( metrics_cost_micros AS FLOAT64), 1000000)) / exchange_source.ex_rate) _gbp_cost,
-((SAFE_CAST( metrics_all_conversions_value AS FLOAT64 )
-  - SAFE_CAST( metrics_cross_device_conversions_value AS FLOAT64 )) / exchange_source.ex_rate) _gbp_revenue,
+SAFE_DIVIDE((SAFE_CAST( metrics_conversions_value AS FLOAT64)), exchange_source.ex_rate) _gbp_revenue,
 
 /* Below macro creates additional fields based on form inputs for "Subaccounts, campaign delimitter, custom fields" */
 {{ add_fields("campaign_name") }} /* Replace with the report's campaign name field */
